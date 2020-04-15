@@ -14,4 +14,6 @@ Photo Gallery Using firebase, MVVM architecture, Dagger2, Coroutines, Live Data 
 **KOTLIN**
 
 ## Screen shots
-<img src="https://user-images.githubusercontent.com/32475878/79349704-2c927e80-7f54-11ea-8415-f02daeae9cf6.jpg"  width="260" height="540">
+
+<img src="https://user-images.githubusercontent.com/32475878/79349704-2c927e80-7f54-11ea-8415-f02daeae9cf6.jpg"  width="260" height="540"> <img src="https://user-images.githubusercontent.com/32475878/79350796-82b3f180-7f55-11ea-8b06-d5e651b92d85.jpg"  width="260" height="540">
+
