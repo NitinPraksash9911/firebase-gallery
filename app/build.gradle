@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.google.gms.google-services'
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "in.nitin.firebaseimageupload"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding.enabled = true
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation deps.ktx_stdlib
+    implementation deps.app_compat
+    implementation deps.ktx_core
+    implementation deps.const_layout
+
+
+    //Unit Test
+    implementation deps.app_compat
+    implementation deps.const_layout
+    implementation deps.lgcy
+    testImplementation deps.atsl.junit
+    testImplementation deps.atsl.mockito
+
+
+    // Espresso
+    androidTestImplementation deps.atsl.espresso
+    androidTestImplementation deps.atsl.sup_espresso
+
+    // androidx.test
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.atsl.test_core
+    androidTestImplementation deps.atsl.ext_junit
+
+    //design
+    implementation deps.design.card_view
+    implementation deps.design.material
+
+    //life cycle
+    implementation deps.lifecycle.extensions
+    implementation deps.lifecycle.viewmodel
+    implementation deps.lifecycle.livedata
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.common
+
+
+    //firebase
+    implementation deps.firebase.database
+    implementation deps.firebase.storage
+    implementation deps.firebase.auth
+
+
+    //dagger2
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+
+    //coroutines
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
+
+
+    // navigation component
+    implementation deps.nav.fargment
+    implementation deps.nav.ui
+
+    // Glide
+    implementation deps.glide.runtime
+    kapt deps.glide.compiler
+
+    //cropper
+    api deps.cropper
+
+
+}

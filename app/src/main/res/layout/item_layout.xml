@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="imagedata"
+            type="in.nitin.firebaseimageupload.datasource.data.ImageData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:transitionName="@{@string/transition_avatar(imagedata.imageUrl)}"
+            android:id="@+id/imageView"
+            imageUrl="@{imagedata.imageUrl}"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_broken_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

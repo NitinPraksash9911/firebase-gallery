@@ -1,0 +1,131 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+ext.deps = [:]
+def versions = [:]
+versions.lifecycle = "2.2.0"
+versions.materail = "1.1.0"
+versions.card_view = '1.0.0'
+versions.androidx_test_espresso = "3.1.0"
+versions.mockito = "1.9.3"
+versions.androidx_test = "1.1.0"
+versions.junit = "4.13"
+versions.mockito = "2.19.0"
+versions.appcompt = "1.1.0"
+versions.core_kotlin = "1.2.0"
+versions.constraint_lay = "1.1.3"
+versions.dagger = '2.27'
+versions.coroutines = "1.3.5"
+versions.kotlin = "1.3.70"
+versions.glide = "4.11.0"
+versions.firebase_db = "19.2.1"
+versions.firebase_storage = "19.1.1"
+versions.firebase_auth = "19.3.0"
+versions.nav_class = "2.3.0-alpha04"
+versions.nav_component = "2.2.1"
+versions.app_compat = "1.1.0"
+versions.legacy_support = "1.0.0"
+versions.cropper = "2.8.0"
+versions.google_service = "4.3.3"
+versions.gradle = "3.6.1"
+ext.versions = versions
+
+
+def deps = [:]
+
+/*appcompact*/
+deps.app_compat = "androidx.appcompat:appcompat:$versions.appcompt"
+
+/*class path*/
+def clspath = [:]
+clspath.goole_ser = "com.google.gms:google-services:$versions.google_service"
+clspath.build_gradle = "com.android.tools.build:gradle:$versions.gradle"
+clspath.nav_arg_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.nav_class"
+clspath.ktx_gradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+deps.clspath = clspath
+
+/* ktx core*/
+deps.ktx_core = "androidx.core:core-ktx:$versions.core_kotlin"
+
+
+/* androidx.test*/
+def atsl = [:]
+atsl.runner = "androidx.test:runner:$versions.androidx_test"
+atsl.test_core = "androidx.test:core:$versions.androidx_test"
+atsl.ext_junit = "androidx.test.ext:junit-ktx:$versions.androidx_test"
+atsl.espresso = "androidx.test.espresso:espresso-core:$versions.androidx_test_espresso"
+atsl.sup_espresso = "com.android.support.test.espresso:espresso-contrib:$versions.androidx_test_espresso"
+atsl.junit = "junit:junit:$versions.junit"
+atsl.mockito = "org.mockito:mockito-core:$versions.mockito"
+deps.atsl = atsl
+
+
+/*constraint layout*/
+deps.const_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_lay"
+
+/*ktx library*/
+deps.ktx_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+
+/*legacy*/
+deps.lgcy = "androidx.legacy:legacy-support-v4:$versions.legacy_support"
+
+
+//design
+def design = [:]
+design.card_view = "androidx.cardview:cardview:$versions.card_view"
+design.material = "com.google.android.material:material:$versions.materail"
+deps.design = design
+
+/*life cycle*/
+def lifecycle = [:]
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+lifecycle.common = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+/*firebase*/
+def firebase = [:]
+firebase.database = "com.google.firebase:firebase-database:$versions.firebase_db"
+firebase.storage = "com.google.firebase:firebase-storage:$versions.firebase_storage"
+firebase.auth = "com.google.firebase:firebase-auth:$versions.firebase_auth"
+deps.firebase = firebase
+
+/*dagger2*/
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+deps.dagger = dagger
+
+/*coroutine*/
+def coroutines = [:]
+coroutines.core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+coroutines.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+deps.coroutines = coroutines
+
+/*navigation component*/
+def nav = [:]
+nav.fargment = "androidx.navigation:navigation-fragment-ktx:$versions.nav_component"
+nav.ui = "androidx.navigation:navigation-ui-ktx:$versions.nav_component"
+deps.nav = nav
+
+/*glide*/
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+deps.glide = glide
+
+deps.cropper = "com.theartofdev.edmodo:android-image-cropper:$versions.cropper"
+
+ext.deps = deps
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url "https://jitpack.io" }
+}
+
+ext.addRepos = this.&addRepos
+

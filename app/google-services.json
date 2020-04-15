@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "126048429604",
+    "firebase_url": "https://fir-imageupload-10409.firebaseio.com",
+    "project_id": "fir-imageupload-10409",
+    "storage_bucket": "fir-imageupload-10409.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126048429604:android:5978a72ffda58d93259ab1",
+        "android_client_info": {
+          "package_name": "in.nitin.firebaseimageupload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126048429604-gg0176m6tqec5jis0d3d5jiib4r3ncsl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.nitin.firebaseimageupload",
+            "certificate_hash": "a0afea8c0e9a501ddab05ac4d8ffebde313d5979"
+          }
+        },
+        {
+          "client_id": "126048429604-smjg1bcsnbptqp9litnls35cne6kjkp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzkSB_wiTBw7v9xhWqslAp2Q-OHXQ-iHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126048429604-smjg1bcsnbptqp9litnls35cne6kjkp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

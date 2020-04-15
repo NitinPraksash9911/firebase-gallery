@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Firebase Galley</string>
+    <string name="grant_premission">Please grant the permission in order to use this app</string>
+    <string name="success">Upload Success</string>
+    <string name="getImage">Please get the image first</string>
+    <string name="expand_imageview">expand ImageView</string>
+    <string name="tool_bar_image_view">tool bar image view</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="proceed">Now you can proceed</string>
+    <string name="single_image">Single Image</string>
+
+    <!--for transition name-->
+    <string name="transition_avatar">avatar %s</string>
+    <string name="load_post">Load Post</string>
+    <string name="status_image">status image</string>
+    <string name="no_internet">Please check your internet</string>
+    <string name="empty_list">No Item Available</string>
+    <string name="uploaded_items">Uploaded Items</string>
+
+</resources>

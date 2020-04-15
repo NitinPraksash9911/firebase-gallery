@@ -1,0 +1,2 @@
+rootProject.name='FirebaseImageUpload'
+include ':app'
