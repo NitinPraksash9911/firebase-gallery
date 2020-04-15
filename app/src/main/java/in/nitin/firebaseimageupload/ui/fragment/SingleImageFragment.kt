@@ -2,9 +2,11 @@ package `in`.nitin.firebaseimageupload.ui.fragment
 
 import `in`.nitin.firebaseimageupload.databinding.FragmentSingleImageBinding
 import android.os.Bundle
-import android.view.*
-import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.transition.TransitionInflater
 
@@ -20,8 +22,10 @@ class SingleImageFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         hideSystemUI()
-        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+        sharedElementEnterTransition =
+            TransitionInflater.from(context).inflateTransition(android.R.transition.move)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +37,11 @@ class SingleImageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.url = args.imageUrl
+
+        binding.closeBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         binding.executePendingBindings()
 
     }

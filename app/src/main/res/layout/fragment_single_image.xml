@@ -9,24 +9,40 @@
             type="String" />
     </data>
 
-    <in.nitin.firebaseimageupload.ui.utils.ZoomLayout
-        android:id="@+id/frameLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <in.nitin.firebaseimageupload.ui.utils.ZoomLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/single_image_view"
+                imageUrl="@{url}"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/single_image"
+                android:src="@drawable/firebasecover"
+                android:transitionName="@{@string/transition_avatar(url)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </in.nitin.firebaseimageupload.ui.utils.ZoomLayout>
 
         <ImageView
-            android:id="@+id/single_image_view"
-            imageUrl="@{url}"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/single_image"
-            android:src="@drawable/firebasecover"
-            android:transitionName="@{@string/transition_avatar(url)}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </in.nitin.firebaseimageupload.ui.utils.ZoomLayout>
+            android:id="@+id/close_btn"
+            android:layout_width="@dimen/dimen_30dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:contentDescription="@string/close"
+            android:src="@drawable/ic_close_black_24dp" />
+    </RelativeLayout>
 </layout>

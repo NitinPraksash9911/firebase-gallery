@@ -18,5 +18,6 @@
     <string name="no_internet">Please check your internet</string>
     <string name="empty_list">No Item Available</string>
     <string name="uploaded_items">Uploaded Items</string>
+    <string name="close">close image</string>
 
 </resources>
