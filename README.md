@@ -11,7 +11,7 @@ Photo Gallery Using firebase, MVVM architecture, Dagger2, Coroutines, Live Data 
 6. User can see full view of photo after clicking any photo from recycler view and can also zoom in and out
 
 ## Language
-** KOTLIN **
+**KOTLIN**
 
 
 
