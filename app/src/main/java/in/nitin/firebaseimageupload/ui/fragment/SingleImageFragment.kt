@@ -1,6 +1,7 @@
 package `in`.nitin.firebaseimageupload.ui.fragment
 
 import `in`.nitin.firebaseimageupload.databinding.FragmentSingleImageBinding
+import `in`.nitin.firebaseimageupload.ui.utils.ZoomLayout
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,16 @@ class SingleImageFragment : Fragment() {
         binding.closeBtn.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        binding.frameLayout.onPinchZoomListener(object : ZoomLayout.PinchZoomListener {
+            override fun onPinchZoom(zoom: Float) {
+                /**
+                 * [closeBtn] will be fade-in and fade-out when the Image View zoom-in and zoom-out accordingly
+                 * */
+                binding.closeBtn.alpha = 2-zoom
+            }
+
+        })
 
         binding.executePendingBindings()
 

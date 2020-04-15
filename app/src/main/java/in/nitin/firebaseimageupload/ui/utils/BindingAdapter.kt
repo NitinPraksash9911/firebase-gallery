@@ -30,19 +30,6 @@ fun bindImageUrl(imgView: ImageView, imgUrl: String?) {
     }
 }
 
-@BindingAdapter("imageUri")
-fun bindImageUri(imgView: ImageView, imgUri: Uri?) {
-    imgUri?.let {
-        Glide.with(imgView.context)
-            .load(it)
-            .apply(
-                RequestOptions()
-                    .placeholder(R.drawable.loading_animation)
-                    .error(R.drawable.ic_broken_image)
-            )
-            .into(imgView)
-    }
-}
 
 
 

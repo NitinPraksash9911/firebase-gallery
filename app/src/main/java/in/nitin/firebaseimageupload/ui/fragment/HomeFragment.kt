@@ -191,6 +191,7 @@ class HomeFragment : Fragment(),
                 .observe(viewLifecycleOwner, Observer {
                     when (it.status) {
                         Result.Status.PROGRESS -> {
+
                             binding.contentLayout.progressHorizontal.progress = it.progress!!
 
                         }

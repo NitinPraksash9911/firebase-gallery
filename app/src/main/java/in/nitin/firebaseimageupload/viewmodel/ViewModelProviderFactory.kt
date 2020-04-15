@@ -1,6 +1,5 @@
 package `in`.nitin.firebaseimageupload.viewmodel
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import javax.inject.Inject

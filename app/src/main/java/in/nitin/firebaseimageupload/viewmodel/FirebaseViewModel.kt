@@ -30,6 +30,7 @@ class FirebaseViewModel @Inject constructor(
     private val SAVE_IMAGE_LIST = "imageList"
 
     fun uploadImage(imageUir: Uri): LiveData<Result<UploadTask.TaskSnapshot>> {
+
         return firebaseRepo.uploadToStorage(imageUir)
     }
 

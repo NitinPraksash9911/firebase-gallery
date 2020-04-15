@@ -40,9 +40,11 @@ class ZoomLayout : FrameLayout, OnScaleGestureListener {
     private var firstTouch = false
     private var time = System.currentTimeMillis()
     private var restore = false
+    private lateinit var pinchZoomListener: PinchZoomListener
 
     constructor(context: Context) : super(context) {
         init(context)
+
     }
 
     constructor(
@@ -58,6 +60,11 @@ class ZoomLayout : FrameLayout, OnScaleGestureListener {
         defStyle: Int
     ) : super(context, attrs, defStyle) {
         init(context)
+    }
+
+
+    fun onPinchZoomListener(pinchZoomListener: PinchZoomListener) {
+        this.pinchZoomListener = pinchZoomListener
     }
 
     private fun init(context: Context) {
@@ -112,8 +119,15 @@ class ZoomLayout : FrameLayout, OnScaleGestureListener {
                         .toString() + ", scale " + scale.toString() + ", dx " + dx
                         .toString() + ", max " + maxDx
                 )
+
+                /**
+                 * onPinch zoom listener
+                 * */
+                pinchZoomListener.onPinchZoom(scale)
+
                 applyScaleAndTranslation()
             }
+
             true
         }
     }
@@ -159,5 +173,9 @@ class ZoomLayout : FrameLayout, OnScaleGestureListener {
         private const val TAG = "ZoomLayout"
         private const val MIN_ZOOM = 1.0f
         private const val MAX_ZOOM = 4.0f
+    }
+
+    interface PinchZoomListener {
+        fun onPinchZoom(zoom: Float)
     }
 }
