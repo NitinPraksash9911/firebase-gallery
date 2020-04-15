@@ -13,8 +13,6 @@ Photo Gallery Using firebase, MVVM architecture, Dagger2, Coroutines, Live Data 
 ## Language
 **KOTLIN**
 
-
-
-
-
+## Screen shots
+![Screenshot_2020-04-15-20-01-36-023_in nitin firebaseimageupload](https://user-images.githubusercontent.com/32475878/79349704-2c927e80-7f54-11ea-8415-f02daeae9cf6.jpg)
 
